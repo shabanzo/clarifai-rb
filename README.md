@@ -31,7 +31,7 @@ gem install clarifai-rb
 
 ## Configuration
 
-Ensure that you have `user_id`, `app_id`, and `pat` from (Clarifai)[https://docs.clarifai.com/clarifai-basics/authentication/personal-access-tokens/]
+Ensure that you have `user_id`, `app_id`, and `pat` from [Clarifai](https://docs.clarifai.com/clarifai-basics/authentication/personal-access-tokens/)
 
 ```ruby
 Clarifai.configure do |config|
@@ -73,4 +73,4 @@ predict_instance.call(
 
 ## License
 
-The gem is available as open source under the terms of the (MIT License)[https://opensource.org/license/mit/].
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/license/mit/).

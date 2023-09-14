@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = "Alpha Version - Predict using Clarifai"
   s.authors     = ["Muhamad Rizky Sya'ban"]
   s.email       = "rizkyshaban@gmail.com"
-  s.files       = `git ls-files`.split($\)
+  s.files       = `git ls-files`.split("\n")
   s.executables   = s.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   s.require_paths = ["lib"]
   s.homepage =

@@ -7,6 +7,7 @@ An unofficial Ruby wrapper for [Clarifai](https://www.clarifai.com/) V2 API with
 1. [Getting Started](https://github.com/shabanzo/clarifai-rb/blob/main/README.md#getting-started)
 2. [Configuration](https://github.com/shabanzo/clarifai-rb/blob/main/README.md#configuration)
 3. [Usage](https://github.com/shabanzo/clarifai-rb/blob/main/README.md#usage)
+4. [License](https://github.com/shabanzo/clarifai-rb/blob/main/README.md#license)
 
 ## Getting Started
 
@@ -67,3 +68,7 @@ predict_instance.call(
 1. image
 2. video
 3. text
+
+## License
+
+The gem is available as open source under the terms of the (MIT License)[https://opensource.org/license/mit/].

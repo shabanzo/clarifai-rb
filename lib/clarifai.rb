@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'clarifai/configuration'
 require 'clarifai/predict'
 
 require 'net/http'
@@ -7,9 +8,12 @@ require 'uri'
 require 'json'
 
 module Clarifai
-  @base_url = "https://api.clarifai.com/v2/"
+  class << self
+    attr_accessor :configuration
 
-  def self.configure
-    yield self
+    def configure
+      self.configuration ||= Configuration.new
+      yield(self.configuration)
+    end
   end
 end

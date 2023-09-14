@@ -4,36 +4,41 @@ require "open-uri"
 
 module Clarifai
   class Predict
-    @supported_types = %w[image video text]
+    SUPPORTED_TYPES = %w[image video text].freeze
 
     def initialize(model_id:)
       @model_id = model_id
     end
 
     def call(type:, urls:)
-      raise "Type is not supported! (#{supported_types.join(', ')} only)" unless supported_types.include?(type)
+      raise "Type is not supported! (#{SUPPORTED_TYPES.join(', ')} only)" unless SUPPORTED_TYPES.include?(type)
       raise 'Input data not supported! (Array of Strings or String only)' unless valid_params?(urls)
 
+      http = setup_http_client
       request = setup_predict_request(type, urls)
-      response = @http.request(request)
-      JSON.parse(response.body).symbolize_keys
+      response = http.request(request)
+      JSON.parse(response.body)
     end
 
     private
 
     attr_reader :urls, :model_id
 
+    def config
+      @config ||= Clarifai.configuration
+    end
+
     def valid_params?(urls)
       urls.is_a?(Array) || urls.is_a?(String)
     end
 
     def endpoint
-      "#{Clarifai.base_url}/users/#{Clarifai.user_id}/apps/#{Clarifai.app_id}/models/#{model}/outputs"
+      "#{config.base_url}/users/#{config.user_id}/apps/#{config.app_id}/models/#{model_id}/outputs"
     end
 
     def headers
       @headers ||= {
-        Authorization:  "Key #{Clarifai.pat}",
+        Authorization:  "Key #{config.pat}",
         'Content-Type': 'application/json'
       }
     end

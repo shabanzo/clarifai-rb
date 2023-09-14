@@ -14,6 +14,7 @@ module Clarifai
       raise "Type is not supported! (#{SUPPORTED_TYPES.join(', ')} only)" unless SUPPORTED_TYPES.include?(type)
       raise 'Input data not supported! (Array of Strings or String only)' unless valid_params?(urls)
 
+      urls = [urls] unless urls.is_a?(Array)
       http = setup_http_client
       request = setup_predict_request(type, urls)
       response = http.request(request)
@@ -63,14 +64,17 @@ module Clarifai
       { data: { image: { url: url } } }
     end
 
-    def predict_body(type, image_url)
-      { inputs: [{
-        data: {
-          "#{type}": {
-            url: image_url
+    def predict_body(type, urls)
+      inputs = urls.map do |url|
+        {
+          data: {
+            "#{type}": {
+              url: url
+            }
           }
         }
-      }] }.to_json
+      end
+      { inputs: inputs }.to_json
     end
   end
 end

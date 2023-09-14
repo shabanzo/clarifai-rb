@@ -1,4 +1,5 @@
 # clarifai-rb
+
 An unofficial Ruby wrapper for [Clarifai](https://www.clarifai.com/) V2 API with the latest `user_id` and `app_id` scoping.
 
 ## Contents
@@ -14,11 +15,15 @@ Add this line to your application's Gemfile:
 ```
 gem 'clarification'
 ```
+
 And then execute:
+
 ```
 bundle install
 ```
+
 Or install it yourself as:
+
 ```
 gem install clarifai-rb
 ```
@@ -37,6 +42,8 @@ If you're using Rails, create a new file named `clarifai.rb` inside `config/init
 
 ## Usage
 
+For single url:
+
 ```ruby
 predict_instance = Clarifai::Predict.new(model_id: '<your_model_id>')
 predict_instance.call(
@@ -45,7 +52,18 @@ predict_instance.call(
 )
 ```
 
+For multiple urls:
+
+```ruby
+predict_instance = Clarifai::Predict.new(model_id: '<your_model_id>')
+predict_instance.call(
+  type: 'image',
+  urls: ['<image_url_1>', '<image_url_2>']
+)
+```
+
 ### Supported types:
+
 1. image
 2. video
 3. text

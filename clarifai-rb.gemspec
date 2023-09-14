@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |s|
   s.name        = "clarifai-rb"
   s.version     = "0.0.5"
-  s.summary     = "An unofficial Ruby wrapper for Clarifai API"
+  s.summary     = "An unofficial Ruby wrapper for Clarifai V2 API with the latest user_id and app_id scoping"
   s.description = "Alpha Version - Predict using Clarifai"
   s.authors     = ["Muhamad Rizky Sya'ban"]
   s.email       = "rizkyshaban@gmail.com"

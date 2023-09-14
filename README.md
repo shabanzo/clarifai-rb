@@ -31,6 +31,8 @@ gem install clarifai-rb
 
 ## Configuration
 
+Ensure that you have `user_id`, `app_id`, and `pat` from (Clarifai)[https://docs.clarifai.com/clarifai-basics/authentication/personal-access-tokens/]
+
 ```ruby
 Clarifai.configure do |config|
   config.user_id = '<your_user_id>'
@@ -43,7 +45,7 @@ If you're using Rails, create a new file named `clarifai.rb` inside `config/init
 
 ## Usage
 
-For single url:
+For a single url:
 
 ```ruby
 predict_instance = Clarifai::Predict.new(model_id: '<your_model_id>')

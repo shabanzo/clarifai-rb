@@ -14,7 +14,7 @@ An unofficial Ruby wrapper for [Clarifai](https://www.clarifai.com/) V2 API with
 Add this line to your application's Gemfile:
 
 ```
-gem 'clarification'
+gem 'clarifai-rb'
 ```
 
 And then execute:

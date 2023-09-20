@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
-require "open-uri"
+require 'open-uri'
 
 module Clarifai
   class Predict
     SUPPORTED_TYPES = %w[image video text].freeze
+
+    attr_reader :inputs, :outputs
 
     def initialize(model_id:)
       @model_id = model_id
@@ -18,7 +20,8 @@ module Clarifai
       http = setup_http_client
       request = setup_predict_request(type, urls)
       response = http.request(request)
-      JSON.parse(response.body)
+      result = JSON.parse(response.body)
+      @outputs = result['outputs']
     end
 
     private
@@ -65,7 +68,7 @@ module Clarifai
     end
 
     def predict_body(type, urls)
-      inputs = urls.map do |url|
+      @inputs = urls.map do |url|
         {
           data: {
             "#{type}": {

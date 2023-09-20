@@ -2,7 +2,7 @@
 
 module Clarifai
   class Configuration
-    BASE_URL = "https://api.clarifai.com/v2/"
+    BASE_URL = 'https://api.clarifai.com/v2/'
     attr_accessor :user_id, :app_id, :pat, :base_url
 
     def initialize

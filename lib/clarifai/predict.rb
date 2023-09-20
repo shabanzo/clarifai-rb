@@ -6,7 +6,7 @@ module Clarifai
   class Predict
     SUPPORTED_TYPES = %w[image video text].freeze
 
-    attr_reader :inputs, :outputs
+    attr_reader :inputs, :status, :outputs
 
     def initialize(model_id:)
       @model_id = model_id
@@ -21,6 +21,7 @@ module Clarifai
       request = setup_predict_request(type, urls)
       response = http.request(request)
       result = JSON.parse(response.body)
+      @status = result['status']
       @outputs = result['outputs']
     end
 

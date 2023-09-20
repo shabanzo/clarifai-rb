@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.homepage =
     'https://rubygems.org/gems/clarifai-rb'
   s.license = 'MIT'
-  s.required_ruby_version = '>=2.3'
+  s.required_ruby_version = '>=2.6'
 
   s.metadata['rubygems_mfa_required'] = 'true'
   s.metadata['documentation_uri'] = 'https://github.com/shabanzo/clarifai-rb'

@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.clarifai.com/v2//users/shabanzo/apps/sandbox/models/general-image-recognition/outputs
+    body:
+      encoding: UTF-8
+      string: '{"inputs":[{"data":{"image":{"url":"https://github.com/shabanzo/clarifai-rb/blob/main/spec/images/liquor.jpg?raw=true"}}}]}'
+    headers:
+      Authorization:
+      - Key 68a0794c0d254c0dbd7fe5178be11cbf
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 20 Sep 2023 11:17:12 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Headers:
+      - Content-Type,Accept,X-Requested-With,Content-Type,Referer,Accept-Encoding,X-CSRF-Token,Authorization,X-Clarifai-Application-Id,X-Clarifai-REST-API-Key,X-Clarifai-Session-Token,X-Clarifai-Client,X-Clarifai-Site,X-RapidAPI-User,x-clarifai-request-id-prefix,x-request-id
+      Access-Control-Allow-Methods:
+      - GET,HEAD,POST,PUT,PATCH,OPTIONS,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Grpc-Metadata-Content-Type:
+      - application/grpc
+      X-Clarifai-Request-Id:
+      - f9f4eac43851e4bac2663c05a0dc2132
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"status":{"code":10000,"description":"Ok","req_id":"f9f4eac43851e4bac2663c05a0dc2132"},"outputs":[{"id":"4076df94d2c3429bb8e383622a754920","status":{"code":10000,"description":"Ok"},"created_at":"2023-09-20T11:17:12.377983892Z","model":{"id":"general-image-recognition","name":"Image
+        Recognition","created_at":"2016-03-09T17:11:39.608845Z","modified_at":"2023-09-08T13:38:33.148401Z","app_id":"main","model_version":{"id":"aa7f35c01e0642fda5cf400f543e7c40","created_at":"2018-03-06T21:10:24.454834Z","status":{"code":21100,"description":"Model
+        is trained and ready"},"visibility":{"gettable":50},"app_id":"main","user_id":"clarifai","metadata":{}},"user_id":"clarifai","model_type_id":"visual-classifier","visibility":{"gettable":50},"toolkits":[],"use_cases":[],"languages":[],"languages_full":[],"check_consents":[],"workflow_recommended":false},"input":{"id":"f02e34fc31b94eabbe35b7546f2356ae","data":{"image":{"url":"https://github.com/shabanzo/clarifai-rb/blob/main/spec/images/liquor.jpg?raw=true"}}},"data":{"concepts":[{"id":"ai_mCpQg89c","name":"glass","value":0.9945803,"app_id":"main"},{"id":"ai_zJx6RbxW","name":"drink","value":0.97084314,"app_id":"main"},{"id":"ai_5VHsZr8N","name":"liquid","value":0.94703,"app_id":"main"},{"id":"ai_786Zr311","name":"no
+        person","value":0.93865716,"app_id":"main"},{"id":"ai_cQ5Kq5sn","name":"icee","value":0.9307434,"app_id":"main"},{"id":"ai_XcdNCn2k","name":"wine","value":0.92802006,"app_id":"main"},{"id":"ai_j09mzT6j","name":"family","value":0.91707593,"app_id":"main"},{"id":"ai_zFnPQdgB","name":"wood","value":0.91638535,"app_id":"main"},{"id":"ai_Pf2b7clG","name":"indoors","value":0.9099147,"app_id":"main"},{"id":"ai_st5grjcT","name":"H2O","value":0.9063009,"app_id":"main"},{"id":"ai_drK6ClJR","name":"alcohol","value":0.89551616,"app_id":"main"},{"id":"ai_12dz73B9","name":"bottle","value":0.89510363,"app_id":"main"},{"id":"ai_8kP9qkT0","name":"whisky","value":0.89507645,"app_id":"main"},{"id":"ai_3l2jRv5s","name":"liquor","value":0.89367527,"app_id":"main"},{"id":"ai_SsmKLB4z","name":"bar","value":0.88399893,"app_id":"main"},{"id":"ai_f6ZJXjXq","name":"cup","value":0.8741802,"app_id":"main"},{"id":"ai_NTTFwSHB","name":"wet","value":0.8653164,"app_id":"main"},{"id":"ai_DPfr6Xjl","name":"rum","value":0.86174256,"app_id":"main"},{"id":"ai_gB5qwrpr","name":"glass
+        items","value":0.85886425,"app_id":"main"},{"id":"ai_2gmKZLxp","name":"cold","value":0.8437636,"app_id":"main"}]}}]}'
+  recorded_at: Wed, 20 Sep 2023 11:17:12 GMT
+recorded_with: VCR 6.2.0
